@@ -74,4 +74,8 @@ for (const y of YEARS) {
   pool[y] = Object.fromEntries(d.features.filter(f => !f.properties.special).map(f => [f.properties.NAME, [...f.properties.c, Math.round(f.properties.a)]]))
   console.log(y, d.features.length, (fs.statSync(out).size / 1024 | 0) + 'KB')
 }
+// 1900년 원본은 아프리카 분할이 반영되어 있지 않아 앱에서 쓰지 않는다(한국 땅 모양을 빌려 오는 데만 씀).
+// 대신 1914년 지도를 '1910년 무렵' 지도로 함께 쓴다.
+fs.rmSync('public/maps/1900.json', { force: true }); delete pool['1900']
+fs.copyFileSync('public/maps/1914.json', 'public/maps/1910.json'); pool['1910'] = pool['1914']
 fs.writeFileSync('src/data/pool.json', JSON.stringify(pool))

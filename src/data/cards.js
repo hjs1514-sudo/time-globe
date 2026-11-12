@@ -1,6 +1,10 @@
 // 나라 카드: 중학교 2학년 역사 수준 요약. 키는 '원래 이름@연도' (그 연도에만) 또는 '원래 이름' (모든 연도).
 // cap: 중심지, one: 한 줄 소개, pts: 핵심 특징 [분야, 내용], terms: 핵심 용어
 // 교사 화면에서 고칠 수 있게 할 예정. 문장은 교과서 서술에 맞춰 선생님이 검토해 주세요.
+import U2 from './cards/u2.js'
+import U3 from './cards/u3.js'
+import U4 from './cards/u4.js'
+import U6 from './cards/u6.js'
 export const CARDS = {
   // ───────── Ⅰ. 문명의 발생과 고대 세계의 형성 ─────────
   'Ur@bc2000': { cap: '우르, 우루크, 바빌론', one: '티그리스강과 유프라테스강 사이에서 일어난 메소포타미아 문명의 중심지.', pts: [
@@ -259,5 +263,10 @@ export const CARDS = {
   'United States@1945': { cap: '워싱턴', one: '연합국의 승리를 이끌고 국제 연합 창설을 주도한 나라.', pts: [
     ['전쟁', '노르망디 상륙 작전으로 유럽을 해방하고, 미드웨이 해전 뒤 태평양에서 일본을 몰아붙였다. 히로시마와 나가사키에 원자 폭탄을 떨어뜨렸다.'],
     ['전후', '대서양 헌장의 원칙에 따라 1945년 국제 연합(UN)이 만들어졌다. 국제 연맹과 달리 군사력을 사용할 수 있게 하였다.']], terms: ['노르망디 상륙 작전', '원자 폭탄', '국제 연합', '대서양 헌장'] },
+  ...U2, ...U3, ...U4, ...U6,
 }
+// 같은 내용을 다른 연도에도 쓰는 카드
+const SAME = { 'Ghana@800': ['Ghana'], 'Ghana@1000': ['Ghana'], 'Ghana@1200': ['Ghana'], 'Mali@1200': ['Mali@1279'], 'Mali@1500': ['Mali@1279'], 'Mali@1000': ['Mali@1279'], 'Ethiopia@1500': ['Ethiopia@1279'], 'Ethiopia@1600': ['Ethiopia@1279'], 'Benin@1600': ['Benin@1500'], 'Benin@1279': ['Benin@1500'], 'Great Khanate@1279': ['Great Khanate@1279'] }
+for (const [k, [from]] of Object.entries(SAME)) if (!CARDS[k]) CARDS[k] = CARDS[from]
+delete CARDS.Ghana
 export function cardOf(name, yearId) { return CARDS[`${name}@${yearId}`] || CARDS[name] || null }

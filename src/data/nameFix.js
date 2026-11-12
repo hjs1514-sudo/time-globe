@@ -2,7 +2,10 @@
 export const NAME_FIX = {
   bc2000: { Koreans: '고조선(청동기 문화)' },
   bc200: { Rome: '로마 공화정', Carthage: '카르타고' },
-  1000: { Korea: '고려' }, 1500: { Korea: '조선' }, 1600: { Korea: '조선' }, 1783: { Korea: '조선' }, 1815: { Korea: '조선' }, 1880: { Korea: '조선' }, 1900: { Korea: '대한 제국' },
+  1000: { Korea: '고려' },
+  1200: { Liao: '금(여진)', 'Fatimid Caliphate': '아이유브 왕조', 'Ghaznavid Emirate': '구르 왕조', 'Imperial Japan (Fujiwara)': '일본(가마쿠라 막부)', 'Buwayhid Emirates': '아바스 왕조(쇠퇴기)', 'Buyid dynasty': '이란(셀주크·호라즘)', 'Song Empire': '남송', 'Mongol Empire': '몽골(칭기즈 칸)' },
+  1279: { 'Seljuk Caliphate': '룸 셀주크', Kediri: '자와(마자파힛 등장)' }, 1500: { Korea: '조선' }, 1600: { Korea: '조선', 'Inca Empire': '옛 잉카 땅(에스파냐령 페루)', 'Japan (Warring States)': '일본(에도 막부 성립)', 'Emirate of the White Sheep Turks': '백양 왕조' }, 1783: { Korea: '조선' }, 1815: { Korea: '조선' }, 1880: { Korea: '조선' }, 1900: { Korea: '대한 제국' },
+  1910: { 'Manchu Empire': '청', Denmark: '덴마크(그린란드 포함)', Persia: '페르시아(카자르 왕조)' },
   1914: { 'Manchu Empire': '중화민국', Denmark: '덴마크(그린란드 포함)', Persia: '페르시아(카자르 왕조)' },
   1920: {
     USSR: '소비에트 러시아', 'Chinese Warlords': '중화민국(군벌 시대)', 'Ottoman Sultanate': '오스만 제국', Germany: '독일(바이마르 공화국)', Iran: '페르시아', Manchuria: '만주(군벌)',
